@@ -9,3 +9,4 @@ const authController = new AuthController();
 
 authRouter.post("/signup", validateSchema(signupSchema), authController.signUp);
 authRouter.post("/login", validateSchema(loginSchema), authController.login);
+authRouter.get("/verify", authController.verify);
