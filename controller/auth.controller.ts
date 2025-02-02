@@ -86,9 +86,9 @@ export class AuthController {
         });
       }
 
-      const token = await this.userService.generateAccessToken(
-        existingUser.toJSON()
-      );
+      const token = await this.userService.generateAccessToken({
+        id: existingUser?.toJSON()?.id,
+      });
 
       return ResponseHelper.json({
         res,
